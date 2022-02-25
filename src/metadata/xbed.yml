@@ -1,0 +1,27 @@
+# PURL configuration for http://purl.obolibrary.org/obo/xbed
+
+idspace: XBED
+base_url: /obo/xbed
+
+products:
+- xbed.owl: https://raw.githubusercontent.com/pellst/xbed/master/xbed.owl
+- xbed.obo: https://raw.githubusercontent.com/pellst/xbed/master/xbed.obo
+
+term_browser: ontobee
+example_terms:
+- xbed_0000000
+
+entries:
+
+- prefix: /releases/
+  replacement: https://raw.githubusercontent.com/pellst/xbed/v
+
+- prefix: /tracker/
+  replacement: https://github.com/pellst/xbed/issues
+
+- prefix: /about/
+  replacement: http://www.ontobee.org/ontology/XBED?iri=http://purl.obolibrary.org/obo/
+
+## generic fall-through, serve direct from github by default
+- prefix: /
+  replacement: https://raw.githubusercontent.com/pellst/xbed/master/

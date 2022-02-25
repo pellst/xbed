@@ -1,12 +1,1990 @@
 format-version: 1.2
-data-version: xbed/releases/2022-02-25/xbed-base.owl
-ontology: xbed/xbed-base
-property_value: http://purl.org/dc/elements/1.1/description "None" xsd:string
-property_value: http://purl.org/dc/elements/1.1/title "Xenbase Experimental Data Ontology" xsd:string
-property_value: http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 xsd:string
-property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/unspecified
+data-version: 1.1.2
+date: 03:16:2021 10:38
+saved-by: Malcolm Fisher
+auto-generated-by: OBO-Edit 2.3.2
+subsetdef: Antibody_methods "Antibody methods"
+subsetdef: assay "Experimental Assay"
+subsetdef: Article_content_types "Article content types" 
+subsetdef: Copyright_access "Copyright access types" 
+subsetdef: ChIP_type "ChIP_type"
+subsetdef: GEO_assay_types "GEO_assay_types"
+subsetdef: GEO_manipulation_types "GEO_manipulation_types"
+subsetdef: manipulation "Experimental Manipulation"
+subsetdef: morpholino_type "morpholino types"
+subsetdef: PHENO_assay_types "PHENO_assay_types"
+subsetdef: XED_copyright_pmc_subset "XED copyright pmc subset"
+subsetdef: XED_Orthology_prediction_finding "XED Orthology prediction finding"
+subsetdef: XED_Orthology_prediction_method "XED Orthology prediction method"
+synonymtypedef: ABBREVIATION "Abbreviation"
+synonymtypedef: PLURAL "Plural"
+default-namespace: xenbase_experimental_data
 
 [Term]
-id: XBED:00000000
-name: root node
+id: XBED:0000000
+name: Curatable Data
+subset: Article_content_types
+xref: ECO:0000000
+creation_date: 2010-12-19T09:23:26Z
+
+[Term]
+id: XBED:0000001
+name: Gene Expression Assay
+subset: Article_content_types
+xref: ECO:0000008
+is_a: XBED:0000000 ! Curatable Data
+created_by: Jeff
+creation_date: 2010-12-19T09:24:42Z
+
+[Term]
+id: XBED:0000002
+name: Phenotype
+subset: assay
+subset: Article_content_types
+xref: ECO:0000059
+is_a: XBED:0000000 ! Curatable Data
+created_by: Jeff
+creation_date: 2010-12-19T09:25:55Z
+
+[Term]
+id: XBED:0000003
+name: in situ hybridization
+subset: Article_content_types
+subset: assay
+subset: PHENO_assay_types
+synonym: "ISH" EXACT ABBREVIATION []
+synonym: "whole mount in situ hybridization" EXACT []
+synonym: "WMISH" EXACT []
+xref: ECO:0000289
+xref: MMO:0000658
+is_a: XBED:0000001 ! Gene Expression Assay
+created_by: Jeff
+creation_date: 2010-12-19T09:26:48Z
+
+[Term]
+id: XBED:0000004
+name: immunohistochemistry
+subset: Article_content_types
+subset: Antibody_methods
+subset: assay
+subset: PHENO_assay_types
+synonym: "IF" RELATED []
+synonym: "IHC" EXACT ABBREVIATION []
+synonym: "immunofluorescence" RELATED []
+xref: ECO:0001189
+xref: MMO:0000498
+is_a: XBED:0000001 ! Gene Expression Assay
+is_a: XBED:0000055 ! Protein Localization
+created_by: Jeff
+creation_date: 2010-12-19T09:27:20Z
+
+[Term]
+id: XBED:0000005
+name: microarray
+subset: Article_content_types
+subset: assay
+subset: GEO_assay_types
+synonym: "Affymetrix" RELATED []
+xref: ECO:0000058
+is_a: XBED:0000001 ! Gene Expression Assay
+created_by: Jeff
+creation_date: 2010-12-19T09:29:32Z
+
+[Term]
+id: XBED:0000006
+name: Experimental Manipulation
+synonym: "Experimental Treatment" EXACT []
+synonym: "Treatment" EXACT []
+xref: ECO:0000059
+is_a: XBED:0000000 ! Curatable Data
+created_by: lab
+creation_date: 2011-10-14T01:52:50Z
+
+[Term]
+id: XBED:0000007
+name: gain of function
+synonym: "GOF" EXACT []
+synonym: "overexpression" RELATED []
+subset: Article_content_types
+xref: ECO:0000042
+is_a: XBED:0000002 ! Phenotype
+created_by: Jeff
+creation_date: 2010-12-19T09:31:05Z
+
+[Term]
+id: XBED:0000008
+name: loss of function
+synonym: "knockdown" RELATED []
+synonym: "knockout" RELATED []
+synonym: "LOF" EXACT []
+subset: Article_content_types
+xref: ECO:0000016
+is_a: XBED:0000002 ! Phenotype
+created_by: Jeff
+creation_date: 2010-12-19T09:31:57Z
+
+[Term]
+id: XBED:0000009
+name: morpholino oligo
+synonym: "MO" EXACT []
+synonym: "morphant" RELATED []
+subset: Article_content_types
+xref: ECO:0000292
+is_a: XBED:0000018 ! Reagent
+created_by: Jeff
+creation_date: 2010-12-19T09:34:47Z
+
+[Term]
+id: XBED:0000010
+name: mRNA injection
+subset: Article_content_types
+subset: GEO_manipulation_types
+subset: manipulation
+xref: ECO:0000017
+is_a: XBED:0000086 ! Genetic material injection
+created_by: Jeff
+creation_date: 2010-12-19T09:36:08Z
+
+[Term]
+id: XBED:0000011
+name: western blot
+subset: Article_content_types
+subset: Antibody_methods
+subset: assay
+subset: PHENO_assay_types
+xref: ECO:0000279
+xref: MMO:0000669
+is_a: XBED:0000001 ! Gene Expression Assay
+created_by: Jeff
+creation_date: 2010-12-21T05:07:03Z
+
+[Term]
+id: XBED:0000012
+name: RT-PCR
+subset: Article_content_types
+subset: assay
+subset: PHENO_assay_types
+synonym: "reverse transcriptase PCR" EXACT []
+xref: ECO:0001808
+xref: MMO:0000461
+is_a: XBED:0000001 ! Gene Expression Assay
+created_by: Jeff
+creation_date: 2010-12-21T05:08:29Z
+
+[Term]
+id: XBED:0000013
+name: northern blot
+subset: Article_content_types
+subset: assay
+subset: PHENO_assay_types
+xref: ECO:0005653
+is_a: XBED:0000001 ! Gene Expression Assay
+created_by: Jeff
+creation_date: 2010-12-21T05:09:23Z
+
+[Term]
+id: XBED:0000014
+name: RNA interference
+subset: Article_content_types
+subset: manipulation
+synonym: "cosuppression" EXACT []
+synonym: "posttranscriptional silencing" EXACT []
+synonym: "quelling" EXACT []
+synonym: "RNAi" EXACT []
+xref: ECO:0000019
+is_a: XBED:0000008 ! loss of function
+created_by: Jeff
+creation_date: 2010-12-21T05:12:35Z
+
+[Term]
+id: XBED:0000015
+name: microRNA
+subset: Article_content_types
+subset: GEO_manipulation_types
+subset: manipulation
+xref: ECO:0000019
+is_a: XBED:0000086 ! Genetic material injection
+created_by: Jeff
+creation_date: 2010-12-21T05:13:37Z
+
+[Term]
+id: XBED:0000016
+name: siRNA
+subset: Article_content_types
+subset: GEO_manipulation_types
+subset: manipulation
+xref: ECO:0000019
+is_a: XBED:0000022 ! microinjection
+is_a: XBED:0000014 ! RNA interference
+created_by: Jeff
+creation_date: 2010-12-21T05:14:10Z
+
+[Term]
+id: XBED:0000017
+name: loss of function mutation
+synonym: "LOF mutation" EXACT []
+subset: Article_content_types
+xref: ECO:0000016
+is_a: XBED:0000008 ! loss of function
+created_by: Jeff
+creation_date: 2010-12-21T05:14:45Z
+
+[Term]
+id: XBED:0000018
+name: Reagent
+xref: ECO:0000241
+is_a: XBED:0000000 ! Curatable Data
+created_by: lab
+creation_date: 2011-10-14T01:53:13Z
+
+[Term]
+id: XBED:0000019
+name: electroporation/transfection
+subset: Article_content_types
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "electroporation" EXACT []
+synonym: "lipofection" EXACT []
+synonym: "transfection" EXACT []
+is_a: XBED:0000006 ! Experimental Manipulation
+created_by: Jeff
+creation_date: 2010-12-21T05:16:13Z
+
+[Term]
+id: XBED:0000020
+name: environmental treatment
+xref: ECO:0000241
+subset: GEO_manipulation_types
+subset: manipulation
+is_a: XBED:0000006 ! Experimental Manipulation
+created_by: lab
+creation_date: 2011-10-14T02:20:06Z
+
+[Term]
+id: XBED:0000021
+name: microdissection
+subset: manipulation
+synonym: "microsurgery" EXACT []
+synonym: "surgery" EXACT []
+xref: ECO:0000240
+is_a: XBED:0000006 ! Experimental Manipulation
+created_by: lab
+creation_date: 2011-10-14T02:20:27Z
+
+[Term]
+id: XBED:0000022
+name: microinjection
+is_a: XBED:0000006 ! Experimental Manipulation
+created_by: lab
+creation_date: 2011-10-14T02:20:43Z
+
+[Term]
+id: XBED:0000023
+name: cell culture manipulation
+synonym: "tissue culture cells (from Xenopus)" EXACT []
+xref: ECO:0000182
+is_a: XBED:0000006 ! Experimental Manipulation
+created_by: lab
+creation_date: 2011-10-14T02:21:02Z
+
+[Term]
+id: XBED:0000024
+name: transgenesis
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "transgenic" RELATED []
+synonym: "transgenic line" RELATED []
+synonym: "transgenics" EXACT []
+xref: ECO:0001131
+is_a: XBED:0000006 ! Experimental Manipulation
+created_by: lab
+creation_date: 2011-10-14T02:21:49Z
+
+[Term]
+id: XBED:0000025
+name: chemical
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "chemical mutagenesis" RELATED []
+synonym: "chemical treatment" EXACT []
+xref: ECO:0000241
+is_a: XBED:0000020 ! environmental treatment
+created_by: lab
+creation_date: 2011-10-14T02:22:23Z
+
+[Term]
+id: XBED:0000026
+name: heat shock
+subset: GEO_manipulation_types
+subset: manipulation
+xref: ECO:0000241
+is_a: XBED:0000020 ! environmental treatment
+created_by: lab
+creation_date: 2011-10-14T02:22:41Z
+
+[Term]
+id: XBED:0000027
+name: peptide/protein
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "growth factor treatment" EXACT []
+xref: ECO:0000241
+is_a: XBED:0000020 ! environmental treatment
+created_by: lab
+creation_date: 2011-10-14T02:22:52Z
+
+[Term]
+id: XBED:0000028
+name: UV light
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "ultraviolet light" EXACT []
+synonym: "ultraviolet radiation" EXACT []
+synonym: "UV irradiation" EXACT []
+xref: ECO:0000241
+is_a: XBED:0000104 ! radiation
+created_by: lab
+creation_date: 2011-10-14T02:23:10Z
+
+[Term]
+id: XBED:0000029
+name: electrophysiology
+subset: assay
+subset: PHENO_assay_types
+xref: ECO:0006006
+is_a: XBED:0000025 ! chemical
+created_by: lab
+creation_date: 2011-10-14T02:55:04Z
+
+[Term]
+id: XBED:0000030
+name: toxicology
+xref: ECO:0000241
+is_a: XBED:0000025 ! chemical
+created_by: lab
+creation_date: 2011-10-14T02:55:27Z
+
+[Term]
+id: XBED:0000031
+name: tissue ablation
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "cell ablation" RELATED []
+synonym: "partial tissue removal" EXACT []
+synonym: "tissue removal" RELATED []
+xref: ECO:0000242
+is_a: XBED:0000021 ! microdissection
+created_by: lab
+creation_date: 2011-10-14T02:55:58Z
+
+[Term]
+id: XBED:0000032
+name: explant
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "explant culture" EXACT []
+synonym: "explantation" EXACT []
+xref: ECO:0000242
+is_a: XBED:0000021 ! microdissection
+created_by: lab
+creation_date: 2011-10-14T02:56:15Z
+
+[Term]
+id: XBED:0000033
+name: transplant
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "transplantation" EXACT []
+xref: ECO:0000243
+is_a: XBED:0000021 ! microdissection
+created_by: lab
+creation_date: 2011-10-14T02:56:32Z
+
+[Term]
+id: XBED:0000034
+name: DNA injection
+subset: GEO_manipulation_types
+subset: manipulation
+xref: ECO:0000017 ! ectopic expression evidence
+is_a: XBED:0000086 ! Genetic material injection
+created_by: lab
+creation_date: 2011-10-14T02:57:13Z
+
+[Term]
+id: XBED:0000035
+name: lineage tracer
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "fate mapping" RELATED []
+is_a: XBED:0000022 ! microinjection
+created_by: lab
+creation_date: 2011-10-14T02:57:27Z
+
+[Term]
+id: XBED:0000036
+name: morpholino injection
+subset: GEO_manipulation_types
+subset: manipulation
+xref: ECO:0000292
+is_a: XBED:0000089 ! antisense oligonucleotide injection
+created_by: lab
+creation_date: 2011-10-14T02:57:43Z
+
+[Term]
+id: XBED:0000037
+name: protein injection
+subset: GEO_manipulation_types
+subset: manipulation
+is_a: XBED:0000022 ! microinjection
+created_by: lab
+creation_date: 2011-10-14T02:58:02Z
+
+[Term]
+id: XBED:0000038
+name: stable line
+synonym: "stable transgenic" RELATED []
+synonym: "stable transgenic line" RELATED []
+xref: ECO:0001131
+is_a: XBED:0000024 ! transgenesis
+created_by: lab
+creation_date: 2011-10-14T02:58:46Z
+
+[Term]
+id: XBED:0000039
+name: transient
+synonym: "transient transgenesis" RELATED []
+synonym: "transient transgenic" EXACT []
+xref: ECO:0001131
+is_a: XBED:0000024 ! transgenesis
+created_by: lab
+creation_date: 2011-10-14T02:58:57Z
+
+[Term]
+id: XBED:0000040
+name: real time PCR
+subset: assay
+synonym: "real time RT-PCR" EXACT []
+xref: ECO:0000108
+is_a: XBED:0000001 ! Gene Expression Assay
+created_by: lab
+creation_date: 2011-10-14T02:59:15Z
+
+[Term]
+id: XBED:0000041
+name: antibody
+is_a: XBED:0000018 ! Reagent
+created_by: lab
+creation_date: 2011-10-14T02:59:44Z
+
+[Term]
+id: XBED:0000042
+name: clone
+is_a: XBED:0000018 ! Reagent
+created_by: lab
+creation_date: 2011-10-14T02:59:55Z
+
+[Term]
+id: XBED:0000043
+name: transgene
+synonym: "transgenic construct" RELATED []
+xref: ECO:0001131
+is_a: XBED:0000018 ! Reagent
+created_by: lab
+creation_date: 2011-10-14T03:00:16Z
+
+[Term]
+id: XBED:0000044
+name: ELISA
+subset: Antibody_methods
+subset: assay
+subset: PHENO_assay_types
+synonym: "enzyme linked immunosorbent assay" EXACT []
+xref: ECO:0005581
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: lab
+creation_date: 2011-10-17T09:08:22Z
+
+[Term]
+id: XBED:0000045
+name: flow cytometry
+subset: Antibody_methods
+subset: assay
+subset: PHENO_assay_types
+synonym: "FACS" NARROW []
+synonym: "FC" EXACT []
+xref: ECO:0005580
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: lab
+creation_date: 2011-10-17T09:08:37Z
+
+[Term]
+id: XBED:0000046
+name: Other Detection Assay
+subset: Antibody_methods
+subset: assay
+subset: PHENO_assay_types
+xref: ECO:0000314
+is_a: XBED:0000000 ! Curatable Data
+created_by: lab
+creation_date: 2011-10-17T09:21:01Z
+
+[Term]
+id: XBED:0000047
+name: ChIP
+subset: Antibody_methods
+subset: assay
+synonym: "chromatin immunoprecipitation" RELATED []
+synonym: "chromatin IP" EXACT []
+xref: ECO:0007706
+is_a: XBED:0000054 ! immunoprecipitation
+created_by: lab
+creation_date: 2011-10-17T09:21:36Z
+
+[Term]
+id: XBED:0000048
+name: EMSA
+subset: Antibody_methods
+subset: assay
+subset: PHENO_assay_types
+synonym: "electromobility shift assay" RELATED []
+xref: ECO:0001807
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: lab
+creation_date: 2011-10-17T09:23:26Z
+
+[Term]
+id: XBED:0000049
+name: No Curatable Data
+synonym: "NCD" EXACT []
+created_by: lab
+creation_date: 2011-10-17T10:05:49Z
+
+[Term]
+id: XBED:0000050
+name: gain of function mutation
+synonym: "GOF mutation" EXACT []
+xref: ECO:0000042
+is_a: XBED:0000007 ! gain of function
+created_by: lab
+creation_date: 2011-10-17T10:11:26Z
+
+[Term]
+id: XBED:0000051
+name: overexpression
+subset: manipulation
+xref: ECO:0000120
+is_a: XBED:0000007 ! gain of function
+created_by: lab
+creation_date: 2011-10-17T10:11:46Z
+
+[Term]
+id: XBED:0000052
+name: tissue regeneration
+synonym: "limb regeneration" RELATED []
+synonym: "regenerating tissue" EXACT []
+xref: ECO:0000242
+is_a: XBED:0000002 ! Phenotype
+created_by: lab
+creation_date: 2011-10-17T10:12:13Z
+
+[Term]
+id: XBED:0000053
+name: southern blot
+subset: assay
+xref: ECO:0000078
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: lab
+creation_date: 2011-10-18T12:34:23Z
+
+[Term]
+id: XBED:0000054
+name: immunoprecipitation
+subset: assay
+synonym: "IP" EXACT []
+xref: ECO:0005644
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: lab
+creation_date: 2011-10-27T02:20:28Z
+
+[Term]
+id: XBED:0000055
+name: Protein Localization
+subset: assay
+xref: ECO:0000045
+is_a: XBED:0000000 ! Curatable Data
+created_by: lab
+creation_date: 2011-10-27T02:23:12Z
+
+[Term]
+id: XBED:0000056
+name: cell extract manipulation
+subset: assay
+synonym: "cell extract" EXACT []
+xref: ECO:0000183
+is_a: XBED:0000006 ! Experimental Manipulation
+created_by: lab
+creation_date: 2011-10-27T02:27:52Z
+
+[Term]
+id: XBED:0000057
+name: fluorescent protein tag
+subset: assay
+xref: ECO:0000045
+is_a: XBED:0000055 ! Protein Localization
+created_by: lab
+creation_date: 2011-10-28T09:14:03Z
+
+[Term]
+id: XBED:0000058
+name: amputation/regeneration
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "amputation" EXACT []
+synonym: "regeneration" EXACT []
+xref: ECO:0000242
+is_a: XBED:0000031 ! tissue ablation
+created_by: lab
+creation_date: 2012-04-30T01:03:27Z
+
+[Term]
+id: XBED:0000059
+name: RNA-Seq
+subset: assay
+subset: GEO_assay_types
+subset: PHENO_assay_types
+xref: ECO:0000295 ! RNA-sequencing evidence
+is_a: XBED:0000001 ! Gene Expression Assay
+created_by: lab
+creation_date: 2012-10-24T01:46:56Z
+
+[Term]
+id: XBED:0000060
+name: ChIP-Seq
+subset: Antibody_methods
+subset: assay
+subset: GEO_assay_types
+subset: PHENO_assay_types
+synonym: "Chromatin immunoprecipitation sequencing" EXACT []
+xref: ECO:0000229 ! chromatin immunoprecipitation-seq evidence
+is_a: XBED:0000047 ! ChIP
+created_by: lab
+creation_date: 2012-10-24T01:47:21Z
+
+[Term]
+id: XBED:0000061
+name: cell fractionation
+subset: assay
+xref: ECO:0000004
+is_a: XBED:0000055 ! Protein Localization
+created_by: lab
+creation_date: 2012-10-24T01:48:29Z
+
+[Term]
+id: XBED:0000062
+name: cell death detection assay
+subset: assay
+subset: PHENO_assay_types
+synonym: "TUNEL assay" RELATED []
+xref: ECO:0001264
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: lab
+creation_date: 2012-10-24T02:06:06Z
+
+[Term]
+id: XBED:0000063
+name: cell proliferation assay
+subset: assay
+subset: PHENO_assay_types
+synonym: "BrDU incorporation" RELATED []
+synonym: "thymidine uptake" RELATED []
+synonym: "tritiated thymidine assay" RELATED []
+xref: ECO:0001807
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: lab
+creation_date: 2012-10-24T02:21:25Z
+
+[Term]
+id: XBED:0000064
+name: cell viability assay
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: lab
+creation_date: 2012-10-24T03:00:05Z
+
+[Term]
+id: XBED:0000065
+name: morphology
+subset: assay
+subset: PHENO_assay_types
+synonym: "microscopy" RELATED []
+xref: ECO:0007634
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: lab
+creation_date: 2012-10-25T10:24:16Z
+
+[Term]
+id: XBED:0000066
+name: whole-mount microscopy
+subset: assay
+subset: PHENO_assay_types
+synonym: "light microscopy" RELATED []
+xref: ECO:0001232
+is_a: XBED:0000065 ! morphology
+created_by: lab
+creation_date: 2012-10-25T10:24:38Z
+
+[Term]
+id: XBED:0000067
+name: scanning electron microscopy
+subset: assay
+subset: PHENO_assay_types
+synonym: "SEM" RELATED []
+xref: ECO:0001232
+is_a: XBED:0000065 ! morphology
+created_by: lab
+creation_date: 2012-10-25T10:25:08Z
+
+[Term]
+id: XBED:0000068
+name: transmission electron microscopy
+subset: assay
+subset: PHENO_assay_types
+synonym: "TEM" RELATED []
+xref: ECO:0001232
+is_a: XBED:0000065 ! morphology
+created_by: lab
+creation_date: 2012-10-25T10:25:40Z
+
+[Term]
+id: XBED:0000069
+name: histology
+subset: assay
+subset: PHENO_assay_types
+xref: ECO:0001187
+is_a: XBED:0000065 ! morphology
+created_by: lab
+creation_date: 2012-10-25T10:50:32Z
+
+[Term]
+id: XBED:0000070
+name: stained tissue microscopy
+subset: assay
+subset: PHENO_assay_types
+xref: ECO:0001232
+is_a: XBED:0000065 ! morphology
+created_by: lab
+creation_date: 2012-10-25T10:53:37Z
+
+[Term]
+id: XBED:0000071
+name: 3D imaging
+subset: assay
+subset: PHENO_assay_types
+synonym: "3 dimensional reconstruction" RELATED []
+synonym: "three-dimensional imaging" RELATED []
+xref: ECO:0001232
+is_a: XBED:0000065 ! morphology
+created_by: lab
+creation_date: 2012-10-26T11:53:56Z
+
+[Term]
+id: XBED:0000072
+name: MBD-Seq
+subset: assay
+subset: GEO_assay_types
+synonym: "methyl binding domain sequencing" EXACT []
+xref: EFO:0003750
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: Joshua Fortriede
+creation_date: 2017-08-31T07:09:56Z
+
+[Term]
+id: XBED:0000073
+name: Bisulfite-Seq
+subset: assay
+subset: GEO_assay_types
+xref: EFO:0003753
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: Joshua Fortriede
+creation_date: 2017-08-31T07:09:56Z
+
+[Term]
+id: XBED:0000074
+name: MNase-Seq
+subset: assay
+subset: GEO_assay_types
+synonym: "Micrococcal nuclease sequencing" EXACT []
+xref: EFO:0003751
+xref: ECO:0000219 ! nucleotide sequencing assay evidence
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: Joshua Fortriede
+creation_date: 2017-08-31T07:09:56Z
+
+[Term]
+id: XBED:0000075
+name: ncRNA-Seq
+def: "Non-coding RNA sequencing." []
+subset: assay
+subset: GEO_assay_types
+synonym: "RNA-Seq of non coding RNA" RELATED []
+xref: EFO:0003737
+xref: ECO:0000219 ! nucleotide sequencing assay evidence
+is_a: XBED:0000059 ! RNA-Seq
+created_by: Joshua Fortriede
+creation_date: 2017-08-31T07:09:56Z
+
+[Term]
+id: XBED:0000076
+name: RIP-Seq
+def: "RNA immunoprecipitation experiment assayed by sequencing." []
+subset: assay
+subset: GEO_assay_types
+synonym: "RNA immunoprecipitation sequencing" EXACT []
+xref: EFO:0005310
+xref: ECO:0000219 ! nucleotide sequencing assay evidence
+is_a: XBED:0000054 ! immunoprecipitation
+created_by: Joshua Fortriede
+creation_date: 2017-08-31T07:09:56Z
+
+[Term]
+id: XBED:0000077
+name: miRNA-Seq
+def: "MicroRNA sequencing." []
+subset: assay
+subset: GEO_assay_types
+synonym: "micro-RNA sequencing" EXACT []
+xref: EFO:
+is_a: XBED:0000059 ! RNA-Seq
+created_by: Joshua Fortriede
+creation_date: 2017-08-31T07:09:56Z
+
+[Term]
+id: XBED:0000078
+name: ChIP-chip
+def: "A chromatin immunoprecipitation experiment assayed by microarray." []
+subset: Antibody_methods
+subset: assay
+subset: GEO_assay_types
+synonym: "ChIP on chip" EXACT []
+xref: EFO:0000748
+is_a: XBED:0000047 ! ChIP
+created_by: Malcolm Fisher
+creation_date: 2017-09-20T10:15:22Z
+
+[Term]
+id: XBED:0000079
+name: RIP-chip
+def: "RNA immunoprecipitation experiment assayed by microarray." []
+subset: Antibody_methods
+subset: assay
+subset: GEO_assay_types
+synonym: "RNA immunoprecipitation chip" EXACT []
+xref: EFO:0005517
+xref: ECO:0000219 ! nucleotide sequencing assay evidence
+is_a: XBED:0000054 ! immunoprecipitation
+created_by: Malcolm Fisher
+creation_date: 2017-09-20T10:45:53Z
+
+[Term]
+id: XBED:0000080
+name: ATAC-Seq
+def: "Assay for transposase-accessible chromatin using sequencing (ATAC-Seq), is a method based on direct in vitro transposition of sequencing adaptors into native chromatin, and is a rapid and sensitive method for integrative epigenomic analysis. ATAC-Seq captures open chromatin sites using a simple two-step protocol." []
+subset: assay
+subset: GEO_assay_types
+synonym: "Assay for transposase-accessible chromatin sequencing" EXACT []
+xref: EFO:0007045
+xref: ECO:0000219 ! nucleotide sequencing assay evidence
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: Malcolm Fisher
+creation_date: 2017-09-20T10:55:56Z
+
+[Term]
+id: XBED:0000081
+name: Bio-CAP-Seq
+subset: assay
+subset: GEO_assay_types
+synonym: "BioCap-seq" EXACT []
+synonym: "biotinylated CxxC affinity purification sequencing" EXACT []
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: Malcolm Fisher
+creation_date: 2017-09-20T15:55:43Z
+
+[Term]
+id: XBED:0000082
+name: MeDIP-seq
+def: "An assay in which DNA is the input molecule derived from an antibody based selection process using antibodies targeting methylated DNA, which is then sequenced using high throughput sequencing technology." []
+subset: assay
+subset: GEO_assay_types
+synonym: "mDIP-seq" EXACT []
+synonym: "methylated DNA immunoprecipitation sequencing" EXACT []
+xref: EFO:0003749
+is_a: XBED:0000054 ! immunoprecipitation
+created_by: Malcolm Fisher
+creation_date: 2017-09-20T16:03:49Z
+
+[Term]
+id: XBED:0000083
+name: Hi-C
+def: "Hi-C is a method for analysing 3-dimensional organisation and interaction of chromatin, belonging to the class of techniques collectively called \"Chromosome Conformation Capture\", in which chromatin is crosslinked, then digested, and re-ligated in such a way that only DNA fragments that are covalently linked together form ligation products. Together with 5C, Hi-C does not limit to the study to a specific locus in the genome, and can be used to study chromatin interaction across the genome. To achieve high-throughput, a biotin-labeled nucleotide is incorporated at the ligation junction, enabling selective purification of chimeric DNA ligation junctions followed by deep sequencing. Mapping the sequenced reads back to genome will reveal the origin of the fragments involved in the ligation events." []
+subset: assay
+subset: GEO_assay_types
+synonym: "Tethered Chromosome Conformation Capture" RELATED []
+xref: EFO:0007693
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: Malcolm Fisher
+creation_date: 2017-09-20T16:26:01Z
+
+[Term]
+id: XBED:0000084
+name: Intracytoplasmic sperm injection
+def: "Intracytoplasmic sperm injection." [XAO:0003147]
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "DISCO" EXACT []
+synonym: "ICSI" EXACT []
+xref: ERO:0000641 "Injection of a single sperm into a single celled embryo or an egg for the purpose of in vitro fertilization."
+is_a: XBED:0000086 ! Genetic material injection
+created_by: Malcolm Fisher
+creation_date: 2017-09-22T09:09:49Z
+
+[Term]
+id: XBED:0000085
+name: SCNT
+def: "Somatic cell nuclear transfer." []
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "Somatic cell nuclear transfer." EXACT []
+is_a: XBED:0000086 ! Genetic material injection
+created_by: Malcolm Fisher
+creation_date: 2017-09-22T10:08:18Z
+
+[Term]
+id: XBED:0000086
+name: Genetic material injection
+is_a: XBED:0000022 ! microinjection
+created_by: Malcolm Fisher
+creation_date: 2017-09-22T10:23:25Z
+
+[Term]
+id: XBED:0000087
+name: Intracytoplasmic spermatid injection
+subset: GEO_manipulation_types
+subset: manipulation
+is_a: XBED:0000086 ! Genetic material injection
+created_by: Malcolm Fisher
+creation_date: 2017-09-22T10:33:22Z
+
+[Term]
+id: XBED:0000088
+name: WTTS-Seq
+def: "Whole Transcriptome Termini Site Sequencing." []
+subset: assay
+subset: GEO_assay_types
+synonym: "Whole Transcriptome Termini Site Sequencing" EXACT []
+is_a: XBED:0000059 ! RNA-Seq
+xref: ECO:0000295 ! RNA-sequencing evidence
+created_by: Malcolm Fisher
+creation_date: 2017-10-03T15:56:57Z
+
+[Term]
+id: XBED:0000089
+name: antisense oligonucleotide injection
+synonym: "ASO" EXACT []
+is_a: XBED:0000022 ! microinjection
+xref: ECO:0000018 ! anti-sense experiment evidence
+created_by: Malcolm Fisher
+creation_date: 2017-10-06T09:30:10Z
+
+[Term]
+id: XBED:0000090
+name: DMED injection
+def: "DMED injection." []
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "N,N-dimethylethylenediamine (DMED) phosphoramidate-modified antisense oligonucleotide injection." EXACT []
+is_a: XBED:0000089 ! antisense oligonucleotide injection
+xref: ECO:0000018 ! anti-sense experiment evidence
+created_by: Malcolm Fisher
+creation_date: 2017-10-06T09:32:30Z
+
+[Term]
+id: XBED:0000091
+name: LNA injection
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "Locked Nucleic Acid antisense oligonucleotide injection." EXACT []
+is_a: XBED:0000089 ! antisense oligonucleotide injection
+xref: ECO:0000018 ! anti-sense experiment evidence
+created_by: Malcolm Fisher
+creation_date: 2017-10-06T09:41:12Z
+
+[Term]
+id: XBED:0000092
+name: Phosphorothioate injection
+def: "Phosphorothioate injection." []
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "maternal depletion" RELATED []
+is_a: XBED:0000089 ! antisense oligonucleotide injection
+xref: ECO:0000018 ! anti-sense experiment evidence
+created_by: Malcolm Fisher
+creation_date: 2017-10-06T09:42:48Z
+
+[Term]
+id: XBED:0000093
+name: CRISPR
+def: "A method of gene targetting transgenesis, both transisent and heritable, using the bacterial CRISPR system with specificity from guide RNA sequences." []
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "clustered regularly interspaced short palindromic repeats-associated system." EXACT []
+synonym: "CRISPR/Cas9" RELATED []
+is_a: XBED:0000022 ! microinjection
+is_a: XBED:0000038 ! stable line
+is_a: XBED:0000039 ! transient
+xref: ECO:0005027 ! genetic transformation evidence
+created_by: Malcolm Fisher
+creation_date: 2017-10-06T16:06:45Z
+
+[Term]
+id: XBED:0000094
+name: CLIP-Seq
+def: "CLIP is an antibody-based technique used to study RNA-protein interactions related to RNA immunoprecipitation (RIP), but differs from RIP in the use of UV radiation to cross-link RNA binding proteins to the RNA that they are bound to." []
+subset: assay
+subset: GEO_assay_types
+synonym: "HITS-CLIP" RELATED []
+synonym: "iCLIP" RELATED []
+synonym: "PAR-CLIP" RELATED []
+synonym: "UV Cross-Linking and Immunoprecipitation " EXACT []
+is_a: XBED:0000054 ! immunoprecipitation
+created_by: Malcolm Fisher
+creation_date: 2017-10-11T15:34:53Z
+
+[Term]
+id: XBED:0000095
+name: Epigenetic
+def: "A chromatin immunoprecipitation assay targeting epigenetic modifications." []
+subset: ChIP_type
+synonym: "Epigenetic ChIP" EXACT []
+is_a: XBED:0000047 ! ChIP
+created_by: Malcolm Fisher
+creation_date: 2018-04-04T15:14:38Z
+
+[Term]
+id: XBED:0000096
+name: Transcription Factor
+def: "A chromatin immunoprecipitation assay targeting  transcription factors." []
+subset: ChIP_type
+synonym: "TF ChIP" EXACT []
+synonym: "Transcription Factor ChIP" EXACT []
+is_a: XBED:0000047 ! ChIP
+created_by: Malcolm Fisher
+creation_date: 2018-04-04T15:17:53Z
+
+[Term]
+id: XBED:0000097
+name: Other
+def: "Immunoprecipitation assay on otherwise unclassified targets." []
+subset: ChIP_type
+synonym: "Other ChIP" NARROW []
+is_a: XBED:0000054 ! immunoprecipitation
+created_by: Malcolm Fisher
+creation_date: 2018-04-04T15:20:39Z
+
+[Term]
+id: XBED:0000098
+name: antisense DNA injection
+def: "DNA based antisense oligonucleotide." []
+subset: GEO_manipulation_types
+subset: manipulation
+is_a: XBED:0000089 ! antisense oligonucleotide injection
+created_by: Malcolm Fisher
+creation_date: 2018-04-18T15:09:08Z
+
+[Term]
+id: XBED:0000099
+name: control morpholino
+def: "A morpholino which is intended as an experimental control." []
+subset: morpholino_type
+synonym: "cMO" EXACT []
+synonym: "CMO" EXACT []
+synonym: "control MO" EXACT []
+synonym: "mismatch control" NARROW []
+synonym: "random control morpholino" NARROW []
+is_a: XBED:0000009 ! morpholino oligo
+created_by: Malcolm Fisher
+creation_date: 2018-08-30T14:19:59Z
+
+[Term]
+id: XBED:0000100
+name: splice blocking morpholino
+def: "A morpholino targeting a splice site within an mRNA." []
+subset: morpholino_type
+synonym: "splice blocking MO" EXACT []
+is_a: XBED:0000009 ! morpholino oligo
+created_by: Malcolm Fisher
+creation_date: 2018-08-30T14:28:40Z
+
+[Term]
+id: XBED:0000101
+name: translation blocking morpholino
+def: "A morpholino targeting the translational start site of an mRNA, blocking translation and protein production." []
+subset: morpholino_type
+synonym: "ATG morpholino" NARROW []
+synonym: "translation blocking MO" EXACT []
+is_a: XBED:0000009 ! morpholino oligo
+created_by: Malcolm Fisher
+creation_date: 2018-08-30T14:31:01Z
+
+[Term]
+id: XBED:0000102
+name: uncategorized morpholino
+def: "A morpholino that has not been characterized." []
+subset: morpholino_type
+synonym: "uncategorized MO" EXACT []
+is_a: XBED:0000009 ! morpholino oligo
+created_by: Malcolm Fisher
+creation_date: 2018-12-19T15:16:01Z
+
+[Term]
+id: XBED:0000103
+name: photo morpholino
+def: "A morpholino that contains a photosensitive cleavage site." []
+subset: morpholino_type
+synonym: "photo MO" EXACT []
+synonym: "Photo-cleavable Morpholino" EXACT []
+synonym: "Photo-Morpholino" EXACT []
+synonym: "pMO" EXACT []
+is_a: XBED:0000009 ! morpholino oligo
+created_by: Malcolm Fisher
+creation_date: 2019-01-23T11:05:01Z
+
+[Term]
+id: XBED:0000104
+name: radiation
+def: "The emission of energy as electromagnetic waves or as moving subatomic particles, especially high-energy particles which cause ionization." []
+synonym: "ionising radiation" EXACT []
+is_a: XBED:0000020 ! environmental treatment
+created_by: Malcolm Fisher
+creation_date: 2019-01-23T11:05:01Z
+
+[Term]
+id: XBED:0000105
+name: x-rays
+def: "X-radiation, a form of electromagnetic radiation." []
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "gamma radiation" RELATED []
+synonym: "X-radiation" EXACT []
+synonym: "X-ray" EXACT []
+is_a: XBED:0000104 ! radiation
+created_by: Malcolm Fisher
+creation_date: 2019-01-23T11:05:01Z
+
+[Term]
+id: XBED:0000106
+name: TALEN
+def: "A method of gene targetting transgenesis, both transisent and heritable, using modified Fokl endonuclease domain recognition domains coupled to bacterial TAL effector system domains for specificity." []
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "transcription activator-like effector nucleases" EXACT []
+is_a: XBED:0000022 ! microinjection
+is_a: XBED:0000038 ! stable line
+is_a: XBED:0000039 ! transient
+xref: ECO:0005027 ! genetic transformation evidence
+created_by: Malcolm Fisher
+creation_date: 2019-02-26T09:59:45Z
+
+[Term]
+id: XBED:0000107
+name: Gene Ontology (GO) Annotation
+def: "Data about protein function suitable for GO curation." []
+subset: Article_content_types
+is_a: XBED:0000000 ! Curatable Data
+created_by: Malcolm Fisher
+creation_date: 2019-11-08T15:24:24Z
+
+[Term]
+id: XBED:0000108
+name: Human Disease Annotation
+def: "Data relevant to human diseases are contained within the article." []
+subset: Article_content_types
+is_a: XBED:0000000 ! Curatable Data
+created_by: Malcolm Fisher
+creation_date: 2019-11-08T15:26:12Z
+
+[Term]
+id: XBED:0000109
+name: Article Permissions
+def: "Data relevant to the copyright classification of an article for curation." []
+subset: Article_content_types
+is_a: XBED:0000000 ! Curatable Data
+created_by: Malcolm Fisher
+creation_date: 2019-12-02T16:50:12Z
+
+[Term]
+id: XBED:0000110
+name: Open Access
+def: "Open Access copyright permissions classification for an article." []
+subset: Copyright_access
+is_a: XBED:0000109 ! Article Permissions
+created_by: Malcolm Fisher
+creation_date: 2019-12-02T16:50:12Z
+
+[Term]
+id: XBED:0000111
+name: No Access
+def: "No Access copyright permissions classification for an article." []
+subset: Copyright_access
+is_a: XBED:0000109 ! Article Permissions
+created_by: Malcolm Fisher
+creation_date: 2019-12-02T16:50:12Z
+
+[Term]
+id: XBED:0000112
+name: Full Access: Request Permission
+def: "Full Access: Request Permission copyright classification for an article." []
+subset: Copyright_access
+is_a: XBED:0000109 ! Article Permissions
+created_by: Malcolm Fisher
+creation_date: 2019-12-02T16:50:12Z
+
+[Term]
+id: XBED:0000113
+name: Full Access: Permission Requested
+def: "Full Access: Permission Requested copyright classification for an article." []
+subset: Copyright_access
+is_a: XBED:0000109 ! Article Permissions
+created_by: Malcolm Fisher
+creation_date: 2019-12-02T16:50:12Z
+
+[Term]
+id: XBED:0000114
+name: Full Access: Permission Granted
+def: "Full Access: Permission Granted copyright classification for an article." []
+subset: Copyright_access
+is_a: XBED:0000109 ! Article Permissions
+created_by: Malcolm Fisher
+creation_date: 2019-12-02T16:50:12Z
+
+[Term]
+id: XBED:0000115
+name: Full Access: Permission Denied
+def: "Full Access: Permission Denied copyright classification for an article." []
+subset: Copyright_access
+is_a: XBED:0000109 ! Article Permissions
+created_by: Malcolm Fisher
+creation_date: 2019-12-02T16:50:12Z
+
+
+[Term]
+id: XBED:0000116
+name: Curatable Temporal Development Data
+subset: Temperature_degC
+xref: ECO:0000000
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000117
+name: Development Environment Temperature
+subset: Temperature_degC
+is_a: XBED:0000116 ! Curatable Temporal Development Data
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000118
+name: unknown degC
+subset: Temperature_degC
+synonym: "na degC" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000119
+name: Four degC
+subset: Temperature_degC
+synonym: "4 degC" EXACT ABBREVIATION []
+synonym: "39.2 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000120
+name: Five degC
+subset: Temperature_degC
+synonym: "5 degC" EXACT ABBREVIATION []
+synonym: "41 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000121
+name: Six degC
+subset: Temperature_degC
+synonym: "6 degC" EXACT ABBREVIATION []
+synonym: "42.8 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000122
+name: Seven degC
+subset: Temperature_degC
+synonym: "7 degC" EXACT ABBREVIATION []
+synonym: "44.6 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000123
+name: Eight degC
+subset: Temperature_degC
+synonym: "8 degC" EXACT ABBREVIATION []
+synonym: "46.4 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000124
+name: Nine degC
+subset: Temperature_degC
+synonym: "9 degC" EXACT ABBREVIATION []
+synonym: "48.2 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000125
+name: Ten degC
+subset: Temperature_degC
+synonym: "10 degC" EXACT ABBREVIATION []
+synonym: "50 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000126
+name: Eleven degC
+subset: Temperature_degC
+synonym: "11 degC" EXACT ABBREVIATION []
+synonym: "51.8 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000127
+name: Twelve degC
+subset: Temperature_degC
+synonym: "12 degC" EXACT ABBREVIATION []
+synonym: "53.6 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000128
+name: Thirteen degC
+subset: Temperature_degC
+synonym: "13 degC" EXACT ABBREVIATION []
+synonym: "55.4 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000129
+name: Fourteen degC
+subset: Temperature_degC
+synonym: "14 degC" EXACT ABBREVIATION []
+synonym: "57.2 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000130
+name: Fifteen degC
+subset: Temperature_degC
+synonym: "15 degC" EXACT ABBREVIATION []
+synonym: "59 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000131
+name: Sixteen degC
+subset: Temperature_degC
+synonym: "16 degC" EXACT ABBREVIATION []
+synonym: "60.8 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000132
+name: Seventeen degC
+subset: Temperature_degC
+synonym: "17 degC" EXACT ABBREVIATION []
+synonym: "62.6 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000133
+name: Eighteen degC
+subset: Temperature_degC
+synonym: "18 degC" EXACT ABBREVIATION []
+synonym: "64.4 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000134
+name: Nineteen degC
+subset: Temperature_degC
+synonym: "19 degC" EXACT ABBREVIATION []
+synonym: "66.2 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000135
+name: Twenty degC
+subset: Temperature_degC
+synonym: "20 degC" EXACT ABBREVIATION []
+synonym: "68 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000136
+name: TwentyOne degC
+subset: Temperature_degC
+synonym: "21 degC" EXACT ABBREVIATION []
+synonym: "69.8 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000137
+name: TwentyTwo degC
+subset: Temperature_degC
+synonym: "22 degC" EXACT ABBREVIATION []
+synonym: "71.6 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000138
+name: TwentyThree degC
+subset: Temperature_degC
+synonym: "23 degC" EXACT ABBREVIATION []
+synonym: "73.4 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000139
+name: TwentyFour degC
+subset: Temperature_degC
+synonym: "24 degC" EXACT ABBREVIATION []
+synonym: "75.2 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000140
+name: TwentyFive degC
+subset: Temperature_degC
+synonym: "25 degC" EXACT ABBREVIATION []
+synonym: "77 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000141
+name: TwentySix degC
+subset: Temperature_degC
+synonym: "26 degC" EXACT ABBREVIATION []
+synonym: "78.8 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000142
+name: TwentySeven degC
+subset: Temperature_degC
+synonym: "27 degC" EXACT ABBREVIATION []
+synonym: "80.6 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000143
+name: TwentyEight degC
+subset: Temperature_degC
+synonym: "28 degC" EXACT ABBREVIATION []
+synonym: "82.4 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000144
+name: TwentyNine degC
+subset: Temperature_degC
+synonym: "29 degC" EXACT ABBREVIATION []
+synonym: "84.2 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000145
+name: Thirty degC
+subset: Temperature_degC
+synonym: "30 degC" EXACT ABBREVIATION []
+synonym: "86 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000146
+name: ThirtyOne degC
+subset: Temperature_degC
+synonym: "31 degC" EXACT ABBREVIATION []
+synonym: "87.8 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000147
+name: ThirtyTwo degC
+subset: Temperature_degC
+synonym: "32 degC" EXACT ABBREVIATION []
+synonym: "89.6 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000148
+name: ThirtyThree degC
+subset: Temperature_degC
+synonym: "33 degC" EXACT ABBREVIATION []
+synonym: "91.4 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000149
+name: ThirtyFour degC
+subset: Temperature_degC
+synonym: "34 degC" EXACT ABBREVIATION []
+synonym: "95 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000150
+name: ThirtyFive degC
+subset: Temperature_degC
+synonym: "35 degC" EXACT ABBREVIATION []
+synonym: "95 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000151
+name: ThirtySix degC
+subset: Temperature_degC
+synonym: "36 degC" EXACT ABBREVIATION []
+synonym: "96.8 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000152
+name: ThirtySeven degC
+subset: Temperature_degC
+synonym: "37 degC" EXACT ABBREVIATION []
+synonym: "98.6 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000153
+name: ThirtyEight degC
+subset: Temperature_degC
+synonym: "38 degC" EXACT ABBREVIATION []
+synonym: "100.4 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000154
+name: ThirtyNine degC
+subset: Temperature_degC
+synonym: "39 degC" EXACT ABBREVIATION []
+synonym: "102.2 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000155
+name: Fourty degC
+subset: Temperature_degC
+synonym: "40 degC" EXACT ABBREVIATION []
+synonym: "104 degF" EXACT ABBREVIATION []
+is_a: XBED:0000117 ! Development Environment Temperature
+created_by: Malcolm Fisher
+creation_date: 2020-06-18T20:3:26Z
+
+[Term]
+id: XBED:0000156
+name: DNase-Seq
+subset: assay
+subset: GEO_assay_types
+synonym: "DNA nuclease sequencing" EXACT []
+synonym: "DNase I hypersensitive sites sequencing" EXACT []
+synonym: "DNaseI-Seq" EXACT []
+synonym: "DNase-hypersensitivity seq" EXACT []
+xref: EFO:0003752
+is_a: XBED:0000046 ! Other Detection Assay
+created_by: Malcolm Fisher
+creation_date: 2020-07-27T14:57:56Z
+
+[Term]
+id: XBED:0000157
+name: predation
+subset: GEO_manipulation_types
+subset: manipulation
+synonym: "chronic predation" RELATED []
+synonym: "acute predation" RELATED []
+xref: ECOCORE:00000102
+is_a: XBED:0000020 ! environmental treatment
+created_by: Malcolm Fisher
+creation_date: 2020-08-13T10:26:52Z
+
+[Term]
+id: XBED:0000158
+name: Open Access: Any CC license
+subset: XED_copyright_pmc_subset
+is_a: XBED:0000110 ! Open Access
+created_by: Malcolm Fisher
+creation_date: 20202-10-08T10:53:23Z
+
+[Term]
+id: XBED:0000159
+name: Open Access: CC BY (Attribution)
+def: "Creative Commons Attribution license" [CC BY]
+subset: XED_copyright_pmc_subset
+synonym: "CC BY" EXACT []
+is_a: XBED:0000158 ! Open Access: Any CC license
+created_by: Malcolm Fisher
+creation_date: 2020-10-08T10:53:23Z
+
+[Term]
+id: XBED:0000160
+name: Open Access: CC BY-ND (Attribution, no derivatives)
+def: "Creative Commons Attribution-NoDerivatives license" [CC BY-ND]
+subset: XED_copyright_pmc_subset
+synonym: "CC BY-ND" EXACT []
+synonym: "CC BY ND" EXACT []
+is_a: XBED:0000158 ! Open Access: Any CC license
+created_by: Malcolm Fisher
+creation_date: 2020-10-08T10:53:23Z
+
+[Term]
+id: XBED:0000161
+name: Open Access: CC BY-NC (Attribution, noncommercial)
+def: "Creative Commons Attribution-NonCommercial license" [CC BY-NC]
+subset: XED_copyright_pmc_subset
+synonym: "CC BY-NC" EXACT []
+synonym: "CC BY NC" EXACT []
+is_a: XBED:0000158 ! Open Access: Any CC license
+created_by: Malcolm Fisher
+creation_date: 2020-10-08T10:53:23Z
+
+[Term]
+id: XBED:0000162
+name: Open Access: CC BY-NC-ND (Attribution, noncommercial, no derivatives)
+def: "Creative Commons Attribution-NonCommercial-NoDerivatives license" [CC BY-NC-ND]
+subset: XED_copyright_pmc_subset
+synonym: "CC BY-NC-ND" EXACT []
+synonym: "CC BY NC ND" EXACT []
+is_a: XBED:0000158 ! Open Access: Any CC license
+created_by: Malcolm Fisher
+creation_date: 2020-10-08T10:53:23Z
+
+[Term]
+id: XBED:0000163
+name: Open Access: CC BY-NC-SA (Attribution, noncommercial, share-alike)
+def: "Creative Commons Attribution-NonCommercial-ShareAlike license" [CC BY-NC-SA]
+subset: XED_copyright_pmc_subset
+synonym: "CC BY-NC-SA" EXACT []
+synonym: "CC BY NC SA" EXACT []
+is_a: XBED:0000158 ! Open Access: Any CC license
+created_by: Malcolm Fisher
+creation_date: 2020-10-08T10:53:23Z
+
+[Term]
+id: XBED:0000164
+name: Open Access: CC BY-SA (Attribution, share-alike)
+def: "Creative Commons Attribution-ShareAlike license" [CC BY-SA]
+subset: XED_copyright_pmc_subset
+synonym: "CC BY-SA" EXACT []
+synonym: "CC BY SA" EXACT []
+is_a: XBED:0000158 ! Open Access: Any CC license
+created_by: Malcolm Fisher
+creation_date: 2020-10-08T10:53:23Z
+
+[Term]
+id: XBED:0000165
+name: Open Access: CC0 (Public domain)
+def: "No Rights Reserved" [CC0]
+subset: XED_copyright_pmc_subset
+synonym: "CC0" EXACT []
+is_a: XBED:0000158 ! Open Access: Any CC license
+created_by: Malcolm Fisher
+creation_date: 2020-10-08T10:53:23Z
+
+[Term]
+id: XBED:0000167
+name: cDNA clone-based transcript expression assay
+def: "A method which assesses transcript expression by reverse transcription of purified mRNA into the corresponding complementary DNA (cDNA) before insertion into a vector, allowing synthesis of a large number of copies of the sequence for analysis." [Mosby:Mosbys_Medical_Dictionary--8th_Ed, Segen:Segens_Medical_Dictionary_2012]
+synonym: "cDNA" RELATED []
+xref: MMO:0000645 
+xref: OBI:0600064
+is_a: XBED:0000001 ! Gene Expression Assay
+created_by: Malcolm Fisher
+creation_date: 2021-02-08T22:55:23Z
+
+[Term]
+id: XBED:0000168
+name: PAM
+def: "A sequence of 3-6 nucleotides, typically of the form NGG, immediately adjacent to a guide RNA target site. This site is required for cleavage to occur in the CRISPR gene editing system." []
+synonym: "protospacer adjacent motif" EXACT []
+is_a: XBED:0000000 ! Curatable Data
+created_by: Malcolm Fisher
+creation_date: 2021-03-16T10:38:51Z
+
+[Term]
+id: XBED:0000169
+name: predictionMethodsMatched
+subset: XED_Orthology_prediction_finding
+is_a: XBED:0000174 ! Orthology status
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000170
+name: predictionMethodsNotMatched
+subset: XED_Orthology_prediction_finding
+is_a: XBED:0000174 ! Orthology status
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000171
+name: predictionMethodsNotCalled
+subset: XED_Orthology_prediction_finding
+is_a: XBED:0000174 ! Orthology status
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000172
+name: Orthology Source
+is_a: XBED:0000000 ! Curatable Data
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000173
+name: Ensembl Compara
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000174
+name: Orthology status
+is_a: XBED:0000000 ! Curatable Data
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000175
+name: HGNC
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000176
+name: Hieranoid
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000177
+name: InParanoid
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000178
+name: OMA
+subset: XED_Orthology_prediction_method
+synonym: "Orthologous MAtrix" EXACT []
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000179
+name: OrthoFinder
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000180
+name: OrthoInspector
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000181
+name: PANTHER
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000182
+name: PhylomeDB
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000184
+name: Roundup
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000185
+name: TreeFam
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000186
+name: ZFIN
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-04-01T10:38:51Z
+
+[Term]
+id: XBED:0000187
+name: fastortho
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-05-27T10:38:51Z
+
+[Term]
+id: XBED:0000188
+name: proteinortho
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-05-28T12:23:51Z
+
+
+[Term]
+id: XBED:0000189
+name: swiftortho
+subset: XED_Orthology_prediction_method
+is_a: XBED:0000172 ! Orthology Source
+created_by: Malcolm Fisher
+creation_date: 2021-05-28T12:23:51Z
+
+[Term]
+id: XBED:0000191
+name: genotype
+def: "A genotype is a variant genome, complete or incomplete." []
+xref: SO:0001027
+is_a: XBED:0000000 ! Curatable Data
+created_by: Malcolm Fisher
+creation_date: 2021-08-31T17:38:51Z
+
+[Term]
+id: XBED:0000192
+name: mutant gene
+def: "A variation in the nucleic acid sequence of a specific gene." []
+xref: UMLS:C0678941
+is_a: XBED:0000191 ! genotype
+created_by: Malcolm Fisher
+creation_date: 2021-08-31T17:38:51Z
+
+[Term]
+id: XBED:0000193
+name: vivo morpholino
+def: "A morpholino with a delivery moiety promoting uptake through the cell membrane." []
+subset: morpholino_type
+synonym: "vivo MO" EXACT []
+synonym: "vivo-morpholino" EXACT []
+is_a: XBED:0000009 ! morpholino oligo
+created_by: Malcolm Fisher
+creation_date: 2021-11-19T19:55:51Z
 

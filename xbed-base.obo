@@ -1,0 +1,12 @@
+format-version: 1.2
+data-version: xbed/releases/2022-02-25/xbed-base.owl
+ontology: xbed/xbed-base
+property_value: http://purl.org/dc/elements/1.1/description "None" xsd:string
+property_value: http://purl.org/dc/elements/1.1/title "Xenbase Experimental Data Ontology" xsd:string
+property_value: http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 xsd:string
+property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/unspecified
+
+[Term]
+id: XBED:00000000
+name: root node
+
